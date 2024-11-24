@@ -1,0 +1,527 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  z-index: 1000;
+  overflow-y: auto; /* Makes sidebar scrollable */
+}
+.sidebar a {
+  color: #000;
+  text-decoration: none;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.sidebar a.active {
+  background-color: #6f42c1;
+  color: white;
+  border-radius: 5px;
+}
+.sidebar a:hover {
+  background-color: #eaeaea;
+  color: #6f42c1;
+}
+.sidebar .nav-item .nav-link {
+  padding-left: 10px;
+}
+.sidebar i {
+  margin-right: 10px;
+}
+.sidebar i.arrow {
+  margin-left: auto;
+}
+.sidebar .collapse.show .arrow {
+  transform: rotate(90deg); /* Rotate arrow when expanded */
+}
+.sidebar::-webkit-scrollbar-track {
+  background: #eaeaea; /* Background of the scrollbar track */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: grey; /* Scrollbar color */
+  border-radius: 10px; /* Rounded scrollbar for a smoother look */
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(197, 194, 194); /* Darker color when hovered */
+}
+.sidebar::-webkit-scrollbar {
+  width: 7px; /* Slim scrollbar */
+}
+
+.header {
+  background-color: var(--bs-body-bg);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  z-index: 900;
+  border-bottom: 2px solid lightslategray;
+  border-radius: 8px;
+  margin-left: 1.2%;
+}
+.content-area {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+  margin-left: 270px;
+}
+.form-section-title {
+  background-color: #6f42c1;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.form-label {
+  font-weight: bold;
+}
+.btn-primary {
+  background-color: #6f42c1;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #5a35a3;
+}
+.sidebar img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+#navbar-catagoeries {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.span {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 0px;
+  font-weight: 600;
+}
+.header {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.header-left i {
+  font-size: 1.5rem;
+  color: #ffa500;
+  margin-right: 10px;
+}
+.header-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  align-items: base;
+}
+.header-right i {
+  margin-right: 15px;
+  cursor: pointer;
+  color: #000;
+}
+.header-right img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.notification-badge {
+  position: relative;
+  top: -10px;
+  right: 15px;
+  font-size: 0.75rem;
+  background-color: #ff000f;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+.user-info {
+  text-align: right;
+}
+.user-info small {
+  display: block;
+  font-size: 0.8rem;
+  color: gray;
+}
+.form-section-title {
+  background-color: #6f42c1;
+  color: white;
+  padding: 10px;
+  font-size: 22px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.form-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+.btn-primary {
+  background-color: #6f42c1;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #5a35a3;
+}
+.form-control,
+.form-select {
+  margin-bottom: 15px;
+}
+.hidden {
+  display: none;
+}
+.section-divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 2px solid #eaeaea;
+}
+.form-header {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.add-product-btn {
+  background-color: #6f42c1;
+  color: white;
+  margin-top: 20px;
+}
+.cnic-input {
+  letter-spacing: 2px;
+}
+.measurement-input {
+  display: flex;
+  align-items: center;
+}
+.measurement-input input {
+  width: 45%;
+  margin-right: 5px;
+}
+.measurement-unit {
+  font-weight: bold;
+}
+.submit-btn {
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .content-area {
+    margin-left: 0;
+    margin-top: 80px;
+  }
+}
+.form-section-title {
+  background-color: #6f42c1;
+  color: white;
+  padding: 10px;
+  font-size: 22px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.form-label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+.btn-primary {
+  background-color: #6f42c1;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #5a35a3;
+}
+.form-control,
+.form-select {
+  margin-bottom: 15px;
+}
+.hidden {
+  display: none;
+}
+.section-divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 2px solid #eaeaea;
+}
+.form-header {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #4b0082;
+  text-transform: uppercase;
+}
+.add-product-btn {
+  background-color: #6f42c1;
+  color: white;
+  margin-top: 20px;
+}
+.measurement-input {
+  display: flex;
+  align-items: center;
+}
+.measurement-input input {
+  width: 45%;
+  margin-right: 5px;
+}
+.submit-btn {
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .content-area {
+    margin-left: 0;
+    margin-top: 80px;
+  }
+}
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.balance {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+/* .notification-container {
+  position: relative;
+  /* display: inline-block;  Allows the notification dropdown to align correctly with the notification bell */
+/* } */ */
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 7px;
+  font-size: 12px;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 30px; /* Adjust based on your layout */
+  right: 0;
+  width: 300px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  display: none; /* Initially hidden */
+}
+
+.notification-dropdown.active {
+  display: block;
+}
+
+/* Dropdown Title */
+.dropdown-title {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Notification List */
+.notification-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px; /* Allows for scrolling if there are too many notifications */
+  overflow-y: auto;
+}
+
+.notification-list li {
+  padding: 7px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  color: #333;
+  font-size: large;
+  justify-content: space-between;
+}
+
+.notification-list li:hover {
+  background-color: #f1f1f1;
+}
+
+.notification-list li .notification-content {
+  flex: 1;
+}
+
+.notification-list li .notification-date {
+  color: #777;
+  font-size: 12px;
+}
+
+/* Dropdown Footer */
+.dropdown-footer {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Light Theme */
+body.light-theme {
+  background-color: #ffffff; /* Light background */
+  color: #000000; /* Light text color */
+}
+
+.header.light-theme, 
+.header-left.light-theme, 
+.header-right.light-theme {
+  background-color: #f8f9fa; /* Light header background */
+  color: #000000; /* Light header text color */
+}
+
+.sidebar.light-theme {
+  background-color: #ffffff; /* Light sidebar */
+  color: #000000; /* Light sidebar text */
+}
+
+.sidebar.light-theme a {
+  color: #000000; /* Link color in light theme */
+}
+
+.table.light-theme {
+  background-color: #ffffff; /* Light table background */
+  color: #000000; /* Light table text */
+}
+
+.card.light-theme {
+  background-color: #ffffff; /* Light card background */
+  color: #000000; /* Light card text */
+}
+
+.notification-dropdown.light-theme {
+  background-color: #ffffff; /* Light notification background */
+  color: #000000; /* Light notification text */
+}
+
+/* Dark Theme */
+.header.dark-theme {
+  background-color: #1c1c1c; /* Dark header background */
+  color: #ffffff; /* Dark header text color */
+}
+
+.header.dark-theme .header-title,
+.header.dark-theme .header-left i,
+.header.dark-theme .header-right i {
+  color: #ffffff; /* Change header title and icons to white in dark theme */
+}
+
+.sidebar.dark-theme {
+  background-color: #2c2c2c; /* Dark sidebar */
+  color: #ffffff; /* Dark sidebar text */
+}
+
+.sidebar.dark-theme a {
+  color: #ffffff; /* Link color in dark theme */
+}
+
+.table.dark-theme {
+  background-color: #1e1e1e; /* Dark table background */
+  color: #ffffff; /* Dark table text */
+}
+
+.card.dark-theme {
+  background-color: #1e1e1e; /* Dark card background */
+  color: #ffffff; /* Dark card text */
+}
+
+.notification-dropdown.dark-theme {
+  background-color: #1e1e1e; /* Dark notification background */
+  color: #ffffff; /* Dark notification text */
+}
+
+/* Forms */
+input.light-theme,
+textarea.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ced4da; /* Light border */
+}
+
+input.dark-theme,
+textarea.dark-theme {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #495057; /* Dark border */
+}
+
+/* Buttons */
+.btn-light {
+  background-color: #007bff; /* Light button */
+  color: #ffffff;
+}
+
+.btn-dark {
+  background-color: #0056b3; /* Dark button */
+  color: #ffffff;
+}
+
+
+
+.custom-header {
+  border: 2px solid #007bff; /* Bootstrap primary color */
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #f8f9fa; /* Light background */
+  color: #343a40; /* Dark text */
+  font-weight: bold;
+  transition: all 0.3s ease; /* Smooth transitions */
+  cursor: pointer;
+}
+
+.custom-header:hover {
+  background-color: #007bff; /* Change background on hover */
+  color: white; /* Change text color on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Add shadow */
+}
+
+
+

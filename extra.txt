@@ -1,0 +1,253 @@
+<!-- Local Factories Dropdown -->
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="collapse" href="#factoriesDropdown" role="button"
+          aria-expanded="true">
+          <i class="fas fa-industry"></i> Local Factories
+          <i class="bi bi-chevron-right arrow"></i>
+        </a>
+        <ul class="collapse show" id="factoriesDropdown">
+          <li>
+            <a class="nav-link" href="#" onclick="showForm('listFactories')">List Local Factories</a>
+          </li>
+          <li>
+            <a class="nav-link active" href="#" onclick="showForm('addFactory')">Add Local Factory</a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Factory Area -->
+    <div id="listFactories" class="form-container hidden">
+      <h2 class="form-section-title text-center">List Local Factories</h2>
+      <!-- Table Section -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Account Balance</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bill & Utility</td>
+            <td>Address 1</td>
+            <td>123456789</td>
+            <td>Rs 0/-</td>
+            <td>10/21/2022</td>
+            <td>
+              <button class="btn btn-sm btn-outline-secondary w-100">
+                Edit
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Cash Book</td>
+            <td>Address 2</td>
+            <td>987654321</td>
+            <td>Rs 0/-</td>
+            <td>10/21/2022</td>
+            <td>
+              <button class="btn btn-sm btn-outline-secondary w-100">
+                Edit
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="addFactory" class="form-container hidden">
+      <h2 class="form-section-title text-center">Add Local Factory</h2>
+      <form>
+        <!-- Account Information -->
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="accountTitle" class="form-label">Account Title</label>
+            <input type="text" class="form-control" id="accountTitle" placeholder="Enter Account Title" />
+          </div>
+          <div class="col-md-6">
+            <label for="openingBalance" class="form-label">Opening Balance</label>
+            <input type="number" class="form-control" id="openingBalance" placeholder="0" />
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="reference" class="form-label">Reference</label>
+            <input type="text" class="form-control" id="reference" placeholder="e.g. Admin" />
+          </div>
+          <div class="col-md-6">
+            <label for="creationDate" class="form-label">Creation Date</label>
+            <input type="date" class="form-control" id="creationDate" value="2022-11-24" />
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="typeOfAccount" class="form-label">Type of Account</label>
+            <select class="form-select" id="typeOfAccount">
+              <option>Select Account Type</option>
+              <option>Type 1</option>
+              <option>Type 2</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="form-section-title text-center">Contact Information</div>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@gmail.com" />
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone" placeholder="+XXXXXXXXX" />
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="country" class="form-label">Country</label>
+            <select class="form-select" id="country">
+              <option>Select Country</option>
+              <option>Country 1</option>
+              <option>Country 2</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="city" class="form-label">City</label>
+            <select class="form-select" id="city">
+              <option>Select City</option>
+              <option>City 1</option>
+              <option>City 2</option>
+            </select>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <label for="province" class="form-label">Province</label>
+            <select class="form-select" id="province">
+              <option>Select Province</option>
+              <option>Province 1</option>
+              <option>Province 2</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="postalCode" class="form-label">Postal Code</label>
+            <input type="text" class="form-control" id="postalCode" placeholder="Postal Code" />
+          </div>
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100 mb-3 p-2">Submit</button>
+      </form>
+    </div>
+
+    <div id="addFactory" class="form-container hidden">
+      <h2 class="form-section-title">Add Local Factory</h2>
+      <!-- Add Factory Form Content -->
+    </div>
+
+
+    <div class="col-md-6">
+          <label for="customerEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="customerEmail" placeholder="Enter email" />
+
+
+          <div class="row">
+        <div class="col-md-6">
+          <label for="district" class="form-label">District</label>
+          <input type="text" class="form-control" id="district" placeholder="Enter district" />
+        </div>
+        <div class="col-md-6">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="customerCountry" class="form-label">Country</label>
+          <input type="text" class="form-control" id="customerCountry" placeholder="Enter country" />
+        </div>
+        <div class="col-md-6">
+          <label for="customerPostalCode" class="form-label">Postal Code</label>
+          <input type="text" class="form-control" id="customerPostalCode" placeholder="Enter postal code" />
+        </div>
+      </div>
+
+      <div class="col-md-6">
+          <label for="supplierEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="supplierEmail" placeholder="Enter email" />
+        </div>
+
+        <div class="col-md-6">
+          <label for="companyCountry" class="form-label">Country</label>
+          <input type="text" class="form-control" id="companyCountry" placeholder="Enter country" />
+        </div>
+
+        <!-- Business Information Section -->
+      <div class="section-divider"></div>
+      <div class="form-section-title text-center">Business Information</div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="registrationNumber" class="form-label">Business Registration Number</label>
+          <input type="text" class="form-control" id="registrationNumber" placeholder="Enter registration number" />
+        </div>
+        <div class="col-md-6">
+          <label for="taxId" class="form-label">Tax ID</label>
+          <input type="text" class="form-control" id="taxId" placeholder="Enter tax ID" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="paymentTerms" class="form-label">Payment Terms</label>
+          <input type="text" class="form-control" id="paymentTerms" placeholder="Enter payment terms" />
+        </div>
+      </div>
+
+<div class="col-md-6">
+          <label for="customerCnic" class="form-label">CNIC Number</label>
+          <input type="text" class="form-control cnic-input" id="customerCnic" placeholder="xxxxx-xxxxxxx-x" />
+        </div>
+
+        <!-- Charts Section
+      <div class="row mt-5">
+          Pie Chart for Attendance Overview
+          <div class="col-md-6">
+              <h5 class="text-center">Attendance Distribution</h5>
+              <canvas id="attendancePieChart"></canvas>
+          </div>
+          Bar Chart for Total Working Hours
+          <div class="col-md-6">
+              <h5 class="text-center">Total Working Hours</h5>
+              <canvas id="workingHoursBarChart"></canvas>
+          </div>
+      </div> -->
+
+
+
+
+
+      // document.getElementById('languageSwitcher').addEventListener('change', function() {
+//     const selectedLanguage = this.value;
+//     i18next.changeLanguage(selectedLanguage, function(err, t) {
+//       updateContent();
+//     });
+//   });
+
+
+
+
+
+  <!-- Logistics Section -->
+      <li class="ms-3 mx-3 my-3" id="navbar-catagoeries">LOGISTICS</li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="showForm('deliverydetails')">
+          <i class="bi bi-truck"></i> Purchase Deliveries
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="showForm('saleDeliveries')">
+          <i class="bi bi-truck-flatbed"></i> Sale Deliveries
+        </a>
+      </li>
+
+

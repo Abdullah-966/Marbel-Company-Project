@@ -1,0 +1,515 @@
+
+
+// Doughnut Chart for Expense Summary
+
+
+const ctxExpense = document
+  .getElementById("expenseSummaryChart")
+  .getContext("2d");
+const expenseSummaryChart = new Chart(ctxExpense, {
+  type: "doughnut",
+  data: {
+    labels: ["Labour Expense", "Cutting Blades"],
+    datasets: [
+      {
+        data: [79, 20],
+        backgroundColor: ["#FFD700", "#00CED1"],
+        hoverBackgroundColor: ["#FFC700", "#00BEBF"],
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "bottom",
+      },
+    },
+  },
+});
+
+// Line Chart for Profit
+const ctxProfit = document.getElementById("profitChart").getContext("2d");
+const profitChart = new Chart(ctxProfit, {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Profit",
+        data: [600, 620, 640, 660, 678, 678],
+        backgroundColor: "#00CED1",
+        borderColor: "#00CED1",
+        fill: false,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  },
+});
+
+// Line Chart for Cash in Hand
+const ctxCashInHand = document
+  .getElementById("cashInHandChart")
+  .getContext("2d");
+const cashInHandChart = new Chart(ctxCashInHand, {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Cash in Hand",
+        data: [600, 620, 640, 660, 678, 678],
+        backgroundColor: "#00CED1",
+        borderColor: "#00CED1",
+        fill: false,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  },
+});
+
+// Line Chart for Monthly Expense
+const ctxMonthlyExpense = document
+  .getElementById("monthlyExpenseChart")
+  .getContext("2d");
+const monthlyExpenseChart = new Chart(ctxMonthlyExpense, {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Monthly Expense",
+        data: [600, 620, 640, 660, 678, 678],
+        backgroundColor: "#00CED1",
+        borderColor: "#00CED1",
+        fill: false,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  },
+});
+
+// Line Chart for Monthly Earning
+const ctxMonthlyEarning = document
+  .getElementById("monthlyEarningChart")
+  .getContext("2d");
+const monthlyEarningChart = new Chart(ctxMonthlyEarning, {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    datasets: [
+      {
+        label: "Monthly Earning",
+        data: [600, 620, 640, 660, 678, 678],
+        backgroundColor: "#00CED1",
+        borderColor: "#00CED1",
+        fill: false,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  },
+});
+
+// Bar Chart for Most Products in Stock
+const ctxProductsStock = document
+  .getElementById("productsStockChart")
+  .getContext("2d");
+const productsStockChart = new Chart(ctxProductsStock, {
+  type: "bar",
+  data: {
+    labels: ["Tweera", "Sunny Grey", "Tropical Grey", "Sunny Grey(A)"],
+    datasets: [
+      {
+        label: "Stock",
+        data: [700, 150, 80, 20],
+        backgroundColor: "#9370DB",
+        borderColor: "#9370DB",
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "bottom",
+      },
+    },
+  },
+});
+
+function showForm(formId) {
+  // Hide all form containers
+  document.querySelectorAll(".form-container").forEach((container) => {
+    container.classList.add("hidden");
+  });
+
+  // Show the selected form container
+  document.getElementById(formId).classList.remove("hidden");
+}
+
+// JavaScript to dynamically calculate total price and handle product addition
+
+document.getElementById("quantity").addEventListener("input", calculateTotal);
+document.getElementById("unitPrice").addEventListener("input", calculateTotal);
+
+document
+  .getElementById("quantityInches")
+  .addEventListener("input", calculateTotal);
+document.getElementById("unitPrice").addEventListener("input", calculateTotal);
+
+function calculateTotal() {
+  var feet = parseFloat(document.getElementById("quantityFeet").value) || 0;
+  var inches = parseFloat(document.getElementById("quantityInches").value) || 0;
+  var totalFeet = feet + inches / 12; // Convert inches to feet
+  var unitPrice = parseFloat(document.getElementById("unitPrice").value) || 0;
+  var totalPrice = totalFeet * unitPrice;
+  document.getElementById("totalPrice").value = totalPrice.toFixed(2);
+}
+
+
+
+// enmployee details about attendace
+function viewDetails(employeeName) {
+  // Dummy data for current month's attendance details (you can replace this with real data)
+  const attendanceData = {
+      "John Doe": [
+          { date: "2024-11-01", status: "Present", hours: 8 },
+          { date: "2024-11-02", status: "Absent", hours: 0 },
+          { date: "2024-11-03", status: "Present", hours: 4 },
+          { date: "2024-11-04", status: "Leave", hours: 0 },
+          { date: "2024-11-05", status: "Present", hours: 8 },
+          { date: "2024-11-06", status: "Present", hours: 3 },
+          { date: "2024-11-07", status: "Present", hours: 7 },
+          { date: "2024-11-08", status: "Present", hours: 1 },
+          // Add more data here for the current month as needed...
+      ],
+      // Add more employees if needed...
+  };
+
+  // Show the details for the selected employee
+  document.getElementById("employeeName").innerText = employeeName + " - Attendance Details";
+  const details = attendanceData[employeeName] || [];
+  const tbody = document.getElementById("attendanceDetails");
+  tbody.innerHTML = "";  // Clear any previous data
+
+  details.forEach((entry) => {
+      const row = `<tr style="text-align: center">
+                      <td>${entry.date}</td>
+                      <td>${entry.status}</td>      
+                      <td>${entry.hours}</td>
+                  </tr>`;
+      tbody.innerHTML += row;
+  });
+
+  // Display the details section
+  document.getElementById("employeeDetails").classList.remove("hidden");
+
+  // Generate all days for the current month
+  const today = new Date();
+  const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate(); // Get total days in the current month
+  const labels = Array.from({ length: daysInMonth }, (_, i) => {
+      const day = (i + 1).toString().padStart(2, '0');
+      return `2024-11-${day}`;  // Assuming it's November, adapt to current date
+  });
+
+  // Map the attendance data to match each day in the month (fill with null or 0 where no data exists)
+  const data = labels.map((label) => {
+      const entry = details.find((d) => d.date === label);
+      return entry ? entry.hours : null;  // If no entry, return null
+  });
+
+  // Reset the chart container (remove any previous charts)
+  const chartContainer = document.getElementById("attendanceChartContainer");
+  chartContainer.innerHTML = '<canvas id="attendanceChart"></canvas>'; // Reset the chart container with a new canvas
+
+  // Create the chart using Chart.js
+  const ctx = document.getElementById("attendanceChart").getContext('2d');
+  new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: labels, // Days of the month
+          datasets: [{
+              label: 'Working Hours',
+              data: data, // Attendance data for each day
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1,
+              spanGaps: false // Leave gaps where data is null
+          }]
+      },
+      options: {
+          scales: {
+              y: {
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Hours Worked'
+                  }
+              },
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Date'
+                  }
+              }
+          },
+          plugins: {
+              tooltip: {
+                  callbacks: {
+                      label: function (context) {
+                          const hours = context.raw;
+                          return hours !== null ? `${hours} Hours` : 'No Data';
+                      }
+                  }
+              }
+          }
+      }
+  });
+}
+
+
+
+
+// notification bell 
+function toggleNotifications() {
+  const dropdown = document.getElementById("notificationDropdown");
+  dropdown.classList.toggle("active");
+}
+
+// Dummy notifications data (replace with real data if needed)
+const notifications = [
+  { content: "New order received", date: "2024-11-01" },
+  { content: "Inventory updated", date: "2024-11-03" },
+  { content: "Employee attendance marked", date: "2024-11-04" },
+  { content: "Pending invoices cleared", date: "2024-11-05" },
+  { content: "New customer registered", date: "2024-11-06" },
+];
+
+// Populate the notification list
+const notificationList = document.querySelector(".notification-list");
+notifications.forEach((notification) => {
+  const listItem = `<li>
+                      <div class="notification-content">${notification.content}</div>
+                      <div class="notification-date">${notification.date}</div>
+                    </li>`;
+  notificationList.innerHTML += listItem;
+});
+
+
+
+
+// notification block
+
+document.getElementById("viewAllBtn").addEventListener("click", function () {
+  loadAllNotifications();
+});
+
+function loadAllNotifications() {
+  const notificationList = document.querySelector(".notification-list");
+  notificationList.innerHTML = ""; // Clear current notifications
+
+  // Dummy data for all notifications
+  const allNotifications = [
+      { content: "New order received", date: "2024-11-01" },
+      { content: "Inventory updated", date: "2024-11-03" },
+      { content: "Employee attendance marked", date: "2024-11-04" },
+      { content: "Pending invoices cleared", date: "2024-11-05" },
+      { content: "New customer registered", date: "2024-11-06" },
+      { content: "Monthly report generated", date: "2024-10-30" },
+      { content: "New message from support", date: "2024-10-29" },
+      { content: "Backup completed successfully", date: "2024-10-28" },
+      { content: "Website maintenance scheduled", date: "2024-10-27" },
+  ];
+
+  allNotifications.forEach(notification => {
+      const li = document.createElement("li");
+      li.textContent = `${notification.content} on ${notification.date}`;
+      notificationList.appendChild(li);
+  });
+}
+
+// Function to toggle the theme
+function toggleTheme() {
+  const body = document.body;
+  const themeToggleIcon = document.getElementById('themeToggle');
+  
+  // Check the current theme
+  if (body.classList.contains('dark-mode')) {
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+    themeToggleIcon.classList.remove('fa-sun'); // Change to moon icon
+    themeToggleIcon.classList.add('fa-moon');
+    localStorage.setItem('theme', 'light'); // Store preference
+  } else {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+    themeToggleIcon.classList.remove('fa-moon'); // Change to sun icon
+    themeToggleIcon.classList.add('fa-sun');
+    localStorage.setItem('theme', 'dark'); // Store preference
+  }
+}
+
+function toggleTheme() {
+  const body = document.body;
+  const isDarkTheme = body.classList.contains('dark-theme');
+
+  // Toggle theme classes on the body
+  body.classList.toggle('dark-theme', !isDarkTheme);
+  body.classList.toggle('light-theme', isDarkTheme);
+
+  // Update other elements based on theme
+  document.querySelectorAll('.header, .header-left, .header-right').forEach(el => {
+      el.classList.toggle('dark-theme', !isDarkTheme);
+      el.classList.toggle('light-theme', isDarkTheme);
+  });
+
+  document.querySelectorAll('.sidebar').forEach(el => {
+      el.classList.toggle('dark-theme', !isDarkTheme);
+      el.classList.toggle('light-theme', isDarkTheme);
+  });
+
+  document.querySelectorAll('.table').forEach(el => {
+      el.classList.toggle('dark-theme', !isDarkTheme);
+      el.classList.toggle('light-theme', isDarkTheme);
+  });
+
+  document.querySelectorAll('.card').forEach(el => {
+      el.classList.toggle('dark-theme', !isDarkTheme);
+      el.classList.toggle('light-theme', isDarkTheme);
+  });
+
+  document.querySelectorAll('.notification-dropdown').forEach(el => {
+      el.classList.toggle('dark-theme', !isDarkTheme);
+      el.classList.toggle('light-theme', isDarkTheme);
+  });
+
+  // Update form inputs
+  document.querySelectorAll('input, textarea').forEach(el => {
+      el.classList.toggle('dark-theme', !isDarkTheme);
+      el.classList.toggle('light-theme', isDarkTheme);
+  });
+
+  // Update buttons
+  document.querySelectorAll('.btn').forEach(el => { 
+      el.classList.toggle('btn-dark', !isDarkTheme);
+      el.classList.toggle('btn-light', isDarkTheme);
+  });
+}
+
+// Attach toggleTheme to the icon click event
+document.querySelector('.far.fa-moon').addEventListener('click', toggleTheme);
+
+
+
+
+
+// to show charts in dashboard
+
+   // Ensure the DOM is fully loaded before running the script
+   
+    // Define orderData BEFORE it's used in any function
+    const orderData = {
+        pending: 40,      // Example value
+        completed: 60,    // Example value
+        total: 100        // Example value
+    };
+  
+
+    const pendingOrdersCtx = document.getElementById('pendingOrdersChart').getContext('2d');
+    const completedOrdersCtx = document.getElementById('completedOrdersChart').getContext('2d');
+    const totalOrdersCtx = document.getElementById('totalOrdersChart').getContext('2d');
+
+    // Pending Orders Chart
+    new Chart(pendingOrdersCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Pending Orders', 'Completed Orders'],
+            datasets: [{
+                data: [orderData.pending, orderData.completed],
+                backgroundColor: ['#FF6384', '#36A2EB'],
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // Completed Orders Chart
+    new Chart(completedOrdersCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Completed Orders', 'Pending Orders'],
+            datasets: [{
+                data: [orderData.completed, orderData.pending],
+                backgroundColor: ['#36A2EB', '#FF6384'],
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // Total Orders Chart
+    new Chart(totalOrdersCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Total Orders', 'Pending Orders', 'Completed Orders'],
+            datasets: [{
+                data: [orderData.total, orderData.pending, orderData.completed],
+                backgroundColor: ['#FFCE56', '#FF6384', '#36A2EB'],
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+        
+        function showSection(sectionId) {
+          // Hide all sections
+          
+          const sections = document.querySelectorAll('.graph-section');
+          sections.forEach(section => {
+              section.style.display = 'none';
+          });
+        
+          // Show the selected section
+          const selectedSection = document.getElementById(sectionId);
+          if (selectedSection) {
+              selectedSection.style.display = 'block';
+              // if (sectionId === 'ordersSection') {
+              //     renderOrderCharts();
+              // }
+          }
+        }
